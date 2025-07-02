@@ -5,3 +5,21 @@ const etudiants = [
     { nom: "Sophie Durand", age: 19, moyenne: 14.9, programme: "Informatique", boursier: true },
     { nom: "Lucie Bernard", age: 23, moyenne: 16.3, programme: "Physique", boursier: false }
 ];
+
+// 1. Capturer l'élément HTML où afficher la liste des étudiants
+const studentList = document.getElementById('student-list');
+
+//2. Créer une fonction pour générer le HTML de la liste des étudiants
+function generateStudentList() {
+    let html = '<ul>';
+    etudiants.forEach(etudiant => {
+        html += `<li>${etudiant.nom} - Age: ${etudiant.age}, Moyenne: ${etudiant.moyenne}, Programme: ${etudiant.programme}, Boursier: ${etudiant.boursier ? 'Oui' : 'Non'}</li>`;
+        // html = html + '<li>' + etudiant.nom + ' - Age: ' + etudiant.age + ', Moyenne: ' + etudiant.moyenne + ', Programme: ' + etudiant.programme + ', Boursier: ' + (etudiant.boursier ? 'Oui' : 'Non') + '</li>';
+        // html = '<ul>' + '<li>' + etudiant.nom + ' - Age: ' + etudiant.age + ', Moyenne: ' + etudiant.moyenne + ', Programme: ' + etudiant.programme + ', Boursier: ' + (etudiant.boursier ? 'Oui' : 'Non') + '</li>';
+    });
+    html += '</ul>';
+    return html;
+}
+
+//3. Insérer le HTML généré dans l'élément de la page
+studentList.innerHTML = generateStudentList();
