@@ -26,6 +26,7 @@ studentList.innerHTML = generateStudentList(etudiants);
 
 // 1. Capturer l'element du bouton et on va lui rajouter une fonctionalite pour filtrer la liste d'etudiants
 document.getElementById('filter-boursiers').addEventListener('click', () => {
+   console.log('Filtrer les boursiers');
     const boursiers = etudiants.filter(student => student.boursier === true);
     generateStudentList(boursiers); // Rendre les boursiers sur la page
 });
