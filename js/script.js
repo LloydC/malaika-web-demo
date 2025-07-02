@@ -1,0 +1,1 @@
+console.log('Malaika Web Demo Loaded');
